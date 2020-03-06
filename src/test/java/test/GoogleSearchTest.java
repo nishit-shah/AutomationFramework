@@ -43,7 +43,7 @@ public class GoogleSearchTest {
 		GoogleSearchPageObjects googleSearch = new GoogleSearchPageObjects(driver);
 		driver.get("https://google.com");
 		googleSearch.searchText("Automation Testing");
-		googleSearch.searchButtonClick();
+		//googleSearch.searchButtonClick();
 		//GoogleSearchHome.searchBox(driver).sendKeys("Automation Testing",Keys.ENTER);
 		//driver.wait(5000);
 
