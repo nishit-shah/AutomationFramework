@@ -1,29 +1,19 @@
 package test;
 
-
-import java.util.concurrent.TimeUnit;
-
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-import com.aventstack.extentreports.reporter.ExtentAventReporter;
-import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
-
 import io.github.bonigarcia.wdm.WebDriverManager;
-import pages.GoogleSearchHome;
+import pages.GoogleSearchPageFactoryObjects;
 import pages.GoogleSearchPageObjects;
-import listeners.*;
 
-//@Listeners(listeners.TestNGListeners.class)
-public class GoogleSearchTest {
-	
-	private static WebDriver driver;
+public class GoogleSearchPageFactoryTest {
+
+	WebDriver driver;
+	GoogleSearchPageFactoryObjects googleSearchObj;
 	
 	@BeforeTest
 	public void setup() {
@@ -40,11 +30,10 @@ public class GoogleSearchTest {
 	@Test
 	public void googleSearch() {
 		
-		GoogleSearchPageObjects googleSearch = new GoogleSearchPageObjects(driver);
+		
+		googleSearchObj = new GoogleSearchPageFactoryObjects(driver);
 		driver.get("https://google.com");
-		googleSearch.searchText("Automation Testing");
-		//googleSearch.searchButtonClick();
-		//GoogleSearchHome.searchBox(driver).sendKeys("Automation Testing",Keys.ENTER);
+		googleSearchObj.searchQuery("Performance Testing");
 		//driver.wait(5000);
 
 	}
@@ -54,5 +43,6 @@ public class GoogleSearchTest {
 		driver.close();
 		driver.quit();
 	}
+	
 	
 }
