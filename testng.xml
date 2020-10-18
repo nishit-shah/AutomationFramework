@@ -6,7 +6,7 @@
    </listeners>
   <test name="Test">
     <classes>
-     <!--   <class name="test.GoogleSearchTest"/> -->
+     <class name="test.GoogleSearchTest"/>
        <class name="test.GoogleSearchPageFactoryTest"/>
     </classes>
   </test> <!-- Test -->
