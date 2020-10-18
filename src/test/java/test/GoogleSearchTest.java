@@ -23,6 +23,7 @@ import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import listeners.*;
+import pages.GoogleSearchHome;
 import pages.GoogleSearchPageObjects;
 
 //@Listeners(listeners.TestNGListeners.class)
@@ -34,13 +35,13 @@ public class GoogleSearchTest {
 	public void setup() {
 	
 		
-		//WebDriverManager.chromedriver().setup();
-		WebDriverManager.firefoxdriver().setup();
-		//ChromeOptions options = new ChromeOptions();
+		WebDriverManager.chromedriver().setup();
+		//WebDriverManager.firefoxdriver().setup();
+		ChromeOptions options = new ChromeOptions();
 		//options.addArguments("--headless");
-		//driver = new ChromeDriver();
-		driver = new FirefoxDriver();
-		//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver = new ChromeDriver();
+		//driver = new FirefoxDriver();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
 	}
 	
@@ -49,11 +50,11 @@ public class GoogleSearchTest {
 		
 		GoogleSearchPageObjects googleSearch = new GoogleSearchPageObjects(driver);
 		driver.get("https://www.google.com");
-		Thread.sleep(5000);
+		//Thread.sleep(5000);
 		googleSearch.searchText("Automation Testing");
 		//googleSearch.searchButtonClick();
 		//GoogleSearchHome.searchBox(driver).sendKeys("Automation Testing",Keys.ENTER);
-		driver.wait(5000);
+		//driver.wait(5000);
 		
 	}
 	
