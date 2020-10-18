@@ -8,7 +8,7 @@ public class GoogleSearchPageObjects {
 	
 	WebDriver driver;
 
-	By searchTextBox = By.name("q2");
+	By searchTextBox = By.name("q");
 	By searchButton = By.name("btnK");
 	
 	public GoogleSearchPageObjects(WebDriver driver) {
