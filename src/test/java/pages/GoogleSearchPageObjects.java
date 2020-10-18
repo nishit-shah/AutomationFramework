@@ -16,7 +16,7 @@ public class GoogleSearchPageObjects {
 	}
 	
 	public void searchText(String query) {
-		driver.findElement(searchTextBox).sendKeys(query,Keys.ENTER);
+		driver.findElement(searchTextBox).sendKeys(query,Keys.RETURN);
 	}
 	
 	public void searchButtonClick() {
