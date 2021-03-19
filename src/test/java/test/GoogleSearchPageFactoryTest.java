@@ -6,12 +6,17 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+import org.testng.Assert;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+
 import pages.GoogleSearchPageFactoryObjects;
 import pages.GoogleSearchPageObjects;
 
+
+@Listeners(GenerateReport.class)
 public class GoogleSearchPageFactoryTest {
 
 	WebDriver driver;
@@ -20,7 +25,7 @@ public class GoogleSearchPageFactoryTest {
 	@BeforeClass
 	public void setup() {
 	
-		
+	
 		WebDriverManager.chromedriver().setup();
 		//ChromeOptions options = new ChromeOptions();
 		//options.addArguments("--headless");
@@ -37,6 +42,7 @@ public class GoogleSearchPageFactoryTest {
 		driver.get("https://google.com");
 		googleSearchObj.searchQuery("Performance Testing");
 		//driver.wait(5000);
+		Assert.assertTrue(true);
 
 	}
 	

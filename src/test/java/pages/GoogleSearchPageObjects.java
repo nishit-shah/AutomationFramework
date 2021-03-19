@@ -20,7 +20,7 @@ public class GoogleSearchPageObjects {
 	}
 	
 	public void searchButtonClick() {
-		driver.findElement(searchButton).sendKeys(Keys.RETURN);
+		driver.findElement(searchButton).click();
 	}
 	
 }

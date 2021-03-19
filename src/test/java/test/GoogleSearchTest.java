@@ -18,8 +18,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-import com.aventstack.extentreports.reporter.ExtentAventReporter;
-import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import listeners.*;
@@ -50,7 +49,7 @@ public class GoogleSearchTest {
 		
 		GoogleSearchPageObjects googleSearch = new GoogleSearchPageObjects(driver);
 		driver.get("https://www.google.com");
-		//Thread.sleep(5000);
+		Thread.sleep(5000);
 		googleSearch.searchText("Automation Testing");
 		//googleSearch.searchButtonClick();
 		//GoogleSearchHome.searchBox(driver).sendKeys("Automation Testing",Keys.ENTER);
